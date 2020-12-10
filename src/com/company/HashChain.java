@@ -6,14 +6,13 @@ import java.io.*;
 public class HashChain {
     public static void main(String[] args) throws IOException {
 
-        // test insert(data)
-        // testInsertion();
+        // A) test insert(data)
+        testInsertion();
 
+        // B) test delete(data)
+        testDeletion();
 
-        // test delete(data)
-        // testDeletion();
-
-        // test find(data)
+        // C) test find(data)
         testSearchFind();
 
 
@@ -30,7 +29,7 @@ public class HashChain {
         n = 5;
 
         // make table:
-        HashTable theHashTable = new HashTable(size);
+        HashTableTest theHashTable = new HashTableTest(size);
 
         // insert 10 values into the table:
         aKey = 10;
@@ -64,7 +63,7 @@ public class HashChain {
         n = 5;
 
         // make table:
-        HashTable theHashTable = new HashTable(size);
+        HashTableTest theHashTable = new HashTableTest(size);
 
         // insert 10 values into the table:
         aKey = 10;
@@ -102,7 +101,7 @@ public class HashChain {
         n = 5;
 
         // make table:
-        HashTable theHashTable = new HashTable(size);
+        HashTableTest theHashTable = new HashTableTest(size);
 
         // insert 10 values into the table:
         aKey = 10;
@@ -264,7 +263,7 @@ class SortedList{
 } // end Sorted List class
 
 ////////////////////////////////////////////////////////////////////////
-class HashTable{
+class HashTableTest{
 
     // array of lists:
     private SortedList[] hashArray; // array of lists
@@ -272,7 +271,7 @@ class HashTable{
 
     // -----------------------------------------------------------------
     // constructor:
-    public HashTable(int size){
+    public HashTableTest(int size){
         arraySize = size;
 
         // create array:
