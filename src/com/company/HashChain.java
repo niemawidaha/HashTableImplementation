@@ -4,11 +4,135 @@ import java.io.*;
 // This class demonstrates hash table with seperate chaining
 
 public class HashChain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
+        // test insert(data)
+        // testInsertion();
+
+
+        // test delete(data)
+        // testDeletion();
+
+        // test find(data)
+        testSearchFind();
+
+
+    } // ends main
+
+    private static void testInsertion() {
+
+        int aKey;
+        Link aDataItem;
+        int size, n, keysPerCell = 100;
+
+        // declare sizes:
+        size = 5;
+        n = 5;
+
+        // make table:
+        HashTable theHashTable = new HashTable(size);
+
+        // insert 10 values into the table:
+        aKey = 10;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 20;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 30;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 31;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        // display the table:
+        theHashTable.displayTable();
+    } // ends testInsertion()
+
+    private static void testDeletion() {
+
+        int aKey;
+        Link aDataItem;
+        int size, n, keysPerCell = 100;
+
+        // declare sizes:
+        size = 5;
+        n = 5;
+
+        // make table:
+        HashTable theHashTable = new HashTable(size);
+
+        // insert 10 values into the table:
+        aKey = 10;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 20;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 30;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 31;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        // display the table:
+        theHashTable.displayTable();
+
+        System.out.println("Deleting: 31");
+        theHashTable.delete(31);
+        theHashTable.displayTable();
     }
-}
 
+    private static void testSearchFind() {
+
+        int aKey;
+        Link aDataItem;
+        int size, n, keysPerCell = 100;
+
+        // declare sizes:
+        size = 5;
+        n = 5;
+
+        // make table:
+        HashTable theHashTable = new HashTable(size);
+
+        // insert 10 values into the table:
+        aKey = 10;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 20;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 30;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        aKey = 31;
+        aDataItem = new Link(aKey);
+        theHashTable.insert(aDataItem);
+
+        // display the table:
+        theHashTable.displayTable();
+        System.out.println("Find: 20 ");
+
+        Link checkIfExists = theHashTable.find(25);
+        if(checkIfExists != null){
+            System.out.print("Found the link at index:  " + checkIfExists);
+        } else {
+            System.out.println("Couldn't find this link in the index");
+        }
+    } // ends TestSearchFind
+} // ends HashChain class
 ////////////////////////////////////////////////////////////////////////
 class Link
 {
@@ -211,3 +335,4 @@ class HashTable{
         return theLink; // return link
     } // ends inf()
 } // ends HashTable
+////////////////////////////////////////////////////////////////////////
